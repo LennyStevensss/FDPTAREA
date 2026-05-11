@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
     int transporte;
+   int billetera=100;
 
     cout<<"......................................................................."<<endl;
     cout << "|                                                                   |"<<endl;
@@ -19,7 +20,7 @@ int main()
     {
     case 1:
         cout << "----------------------------------------" << endl;
-        cout << "|Tu costo de pasaje de bus es de $0.35.|" << endl;
+        cout << "|Tu costo de pasaje de bus es de $0.35. |" <<billetera-0.35<< endl;
         cout << "----------------------------------------" << endl;
         break;
 

@@ -60,6 +60,8 @@ switch(dia)
     cout<<"|este dia no tienes clase|" << endl;
      cout << "-----------------------" << endl;
 
+     break;
+
 
 
      }
