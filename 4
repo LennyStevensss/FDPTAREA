@@ -1,0 +1,28 @@
+
+
+1. Complejidad temporal Big-O
+
+La complejidad es O(n).
+
+Justificacion: el bucle externo se ejecuta n veces (i va de 0 a n-1).
+El bucle interno se ejecuta siempre 3 veces (j va de 0 a 2), sin importar
+el valor de n, porque su limite es una constante y no depende del tamano
+de la entrada. En cada vuelta del bucle interno se hace una comparacion
+(values[i] == j) y, a lo mucho, un incremento de count, que son operaciones
+de costo constante.
+
+Total de comparaciones = n * 3 = 3n
+
+Como 3 es una constante, 3n crece de forma lineal y la complejidad es O(n).
+No es O(n^2) porque el bucle interno no depende de n.
+
+2. Que pasa si n se duplica
+
+Si n pasa a ser 2n, el numero de comparaciones pasa a ser:
+
+3 * (2n) = 6n
+
+Como 6n es el doble de 3n, el numero de comparaciones se duplica.
+
+Esto es consistente con O(n): al duplicar la entrada, el tiempo de
+ejecucion se duplica aproximadamente.
