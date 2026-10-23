@@ -2,14 +2,14 @@
 #include <stack>
 #include <vector>
 
-void RemoveConsecutiveDuplicates(std::stack<int>& s)
+void RemoveConsecutiveDuplicates(std::stack<int>& values)
 {
     std::stack<int> aux;
 
-    while (!s.empty())
+    while (!values.empty())
     {
-        int value = s.top();
-        s.pop();
+        int value = values.top();
+        values.pop();
         if (aux.empty() || aux.top() != value)
         {
             aux.push(value);
@@ -18,7 +18,7 @@ void RemoveConsecutiveDuplicates(std::stack<int>& s)
 
     while (!aux.empty())
     {
-        s.push(aux.top());
+        values.push(aux.top());
         aux.pop();
     }
 }
@@ -58,9 +58,9 @@ int main()
     std::vector<std::vector<int>> tests = {
         {1, 2, 2, 2, 3, 3}, {5, 5, 5, 5}, {4, 7, 4, 7}, {9}, {}};
 
-    for (const auto& values : tests)
+    for (const auto& testValues : tests)
     {
-        std::stack<int> s = buildStack(values);
+        std::stack<int> s = buildStack(testValues);
         std::cout << "Antes:   ";
         printStack(s);
 
