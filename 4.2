@@ -1,0 +1,48 @@
+. Complejidad temporal Big-O
+
+La complejidad es O(n^2).
+
+Justificacion: el bucle externo se ejecuta n veces (i va de 0 a n-1).
+El bucle interno no avanza de uno en uno, sino de dos en dos (j += 2),
+asi que j toma los valores 0, 2, 4, ..., n-2. Como n es par, esa lista
+tiene exactamente
+
+        n
+        ─
+        2
+
+valores, es decir, el bucle interno se ejecuta n/2 veces por cada vuelta
+del bucle externo. En cada vuelta se hace una comparacion
+(values[i] < values[j]) y, a lo mucho, un incremento de count, que son
+operaciones de costo constante.
+
+Total de comparaciones:
+
+                        n        n^2
+  n * (n/2)  =  n * ─── = ─────
+                        2         2
+
+Como el bucle interno depende de n, el total crece de forma cuadratica.
+La constante 1/2 no cambia el orden de crecimiento, asi que la complejidad
+es O(n^2). No es O(n) porque el bucle interno tambien crece con n.
+
+2. Que pasa si n se duplica
+
+Si n pasa a ser 2n, el numero de comparaciones pasa a ser:
+
+  (2n)^2     4n^2
+  ────── = ───────  =  2n^2
+    2          2
+
+Comparado con el valor original:
+
+   2n^2
+  ─────── = 4
+    n^2
+    ───
+     2
+
+El numero de comparaciones se multiplica por 4 (se cuadruplica).
+
+Esto es consistente con O(n^2): al duplicar la entrada, el tiempo de
+ejecucion se multiplica aproximadamente por 4.
